@@ -49,8 +49,13 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Balloon"))
         {
             Tags(collision);
+            Debug.Log("hit");
             //Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Small"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 
@@ -72,6 +77,7 @@ public class Projectile : MonoBehaviour
 
         }
     }
+
 
     void DestroyProjectile()
     {
