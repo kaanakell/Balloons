@@ -5,6 +5,7 @@ using UnityEngine;
 public class Green : Balloons
 {
     public GameObject smallBalloonsPrefab;
+    public GameObject threewayPrefab;
 
     public virtual void TakeDamage(float damage)
     {
@@ -15,6 +16,7 @@ public class Green : Balloons
             lol.GetComponent<Rigidbody2D>().AddForce(transform.right * Random.Range(2f, 4f), ForceMode2D.Impulse);
             lol = Instantiate(smallBalloonsPrefab, transform.position + new Vector3(-0.5f, 0, 0), transform.rotation);
             lol.GetComponent<Rigidbody2D>().AddForce(-transform.right * Random.Range(2f, 4f), ForceMode2D.Impulse);
+            Instantiate(threewayPrefab, transform.position, transform.rotation);
             Debug.Log("smol");
             Destroy(gameObject);
         }

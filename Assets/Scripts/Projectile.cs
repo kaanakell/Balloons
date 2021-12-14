@@ -4,22 +4,39 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed;
     private Rigidbody2D rbBullet;
     public float lifeTime;
     public float distance;
     public LayerMask whatIsSolid;
     [SerializeField] float damage;
     //public GameObject destroyEffect;
-    private bool hit = false;
+    //private bool hit = false;
     // Start is called before the first frame update
+
+    [SerializeField] int speed = 10;
+
+    [SerializeField] bool towards_mouse = true;
+
     void Start()
     {
         rbBullet = GetComponent<Rigidbody2D>();
-        rbBullet.velocity = transform.up * speed;
 
-        Invoke("DestroyProjectile", lifeTime);
-            
+        if (towards_mouse)
+        {
+            Vector3 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 moveDirection = (mousepos - transform.position);
+            moveDirection.Normalize();
+            rbBullet.rotation = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            rbBullet.velocity = moveDirection * speed;
+        }
+        else
+        {
+            Vector2 moveDirection = (transform.GetChild(0).position - transform.position);
+            moveDirection.Normalize();
+            rbBullet.velocity = moveDirection * speed;
+        }
+
+        Destroy(gameObject, lifeTime);
     }
 
     //// Update is called once per frame
@@ -46,11 +63,20 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Balloon"))
+        if (collision.CompareTag("Red"))
         {
-            Tags(collision);
-            Debug.Log("hit");
+            collision.GetComponent<Red>().TakeDamage(damage);
+            Destroy(gameObject);
             //Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        }
+        else if (collision.CompareTag("Yellow"))
+        {
+            collision.GetComponent<Yellow>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Green"))
+        {
+            collision.GetComponent<Green>().TakeDamage(damage);
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Small"))
@@ -59,29 +85,15 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Tags(Collider2D collision)
-    {
-        if (collision.name == "Yellow Balloon")
-        {
-            collision.GetComponent<Yellow>().TakeDamage(damage);
-
-        }
-        if (collision.name == "Red Balloon")
-        {
-            collision.GetComponent<Red>().TakeDamage(damage);
-
-        }
-        if (collision.name == "Green Balloon")
-        {
-            collision.GetComponent<Green>().TakeDamage(damage);
-
-        }
-    }
-
 
     void DestroyProjectile()
     {
         //Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    private void OnBecameInvisible()
+    {
         Destroy(gameObject);
     }
 }

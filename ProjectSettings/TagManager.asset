@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Balloon
   - Small
+  - Projectile
+  - Powerup
+  - Red
+  - Yellow
+  - Green
   layers:
   - Default
   - TransparentFX

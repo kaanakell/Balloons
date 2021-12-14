@@ -15,14 +15,15 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+        
 
         if(timeBetweenShots <= 0)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                //Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                //float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                //transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
                 Instantiate(projectilePrefab, shotPoint.position, transform.rotation);
             }
         }
