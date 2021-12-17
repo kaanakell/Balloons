@@ -707,7 +707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063076712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.41, y: 0.3998, z: 0}
+  m_LocalPosition: {x: 9.34, y: 0.54, z: 0}
   m_LocalScale: {x: 1, y: 9.224774, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -947,17 +947,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717440960}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f907743f31edf545b13f85df4c13780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   balloonPrefabs:
-  - {fileID: 8214820422471556924, guid: 8a2fe5b27f4a7cd488730d6cb2e2ccc9, type: 3}
-  - {fileID: 7155803924793388773, guid: 7a1ef3677f4559d42bb6739abb219b76, type: 3}
   - {fileID: 6620748613332502274, guid: ab81f2fe20e766940906be12837c0f4b, type: 3}
-  spawnPosX: 20
-  spawnPosZ: 20
+  - {fileID: 7155803924793388773, guid: 7a1ef3677f4559d42bb6739abb219b76, type: 3}
+  - {fileID: 8214820422471556924, guid: 8a2fe5b27f4a7cd488730d6cb2e2ccc9, type: 3}
+  spawnPosX: 8
+  spawnPosZ: 8
+  spawnPosY: 4.5
   startDelay: 2
   startInterval: 1.5
 --- !u!4 &1717440962
@@ -981,7 +982,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717440960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 820cc28996052ef4e8e27b98cb6dd632, type: 3}
   m_Name: 
