@@ -11,17 +11,50 @@ public class SpawnManager : MonoBehaviour
     public float startDelay = 2.0f;
     public float startInterval = 1.5f;
 
+    [SerializeField]float delayAndSpawnRate = 2;
+    [SerializeField]float timeUntilSpawnRateIncrease = 30;
+
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("BalloonSpawnChance", startDelay, Random.Range(3f, 5f));
+        //StartCoroutine(SpawnObject(delayAndSpawnRate));
     }
 
     // Update is called once per frame
     void Update()
     {
-
+   
     }
+
+    /*IEnumerator SpawnObject(float firstDelay)
+    {
+        float spawnRateCountdown = timeUntilSpawnRateIncrease;
+        float spawnCountdown = firstDelay;
+        while (true)
+        {
+            yield return null;
+            spawnRateCountdown -= Time.deltaTime;
+            spawnCountdown -= Time.deltaTime;
+
+            // Should a new object be spawned?
+            if (spawnCountdown < 0)
+            {
+                spawnCountdown += delayAndSpawnRate;
+                Instantiate(balloonPrefabs[0], new Vector2(Random.Range(-9.5f, 9.5f), 5), Quaternion.identity);
+                Instantiate(balloonPrefabs[1], new Vector2(Random.Range(-9.5f, 9.5f), 5), Quaternion.identity);
+                Instantiate(balloonPrefabs[2], new Vector2(Random.Range(-9.5f, 9.5f), 5), Quaternion.identity);
+            }
+
+            // Should the spawn rate increase?
+            if (spawnRateCountdown < 0 && delayAndSpawnRate > 1)
+            {
+                spawnRateCountdown += timeUntilSpawnRateIncrease;
+                delayAndSpawnRate -= 0.1f;
+            }
+        }
+    }*/
+
 
     /*void SpawnRandomBalloon()
     {

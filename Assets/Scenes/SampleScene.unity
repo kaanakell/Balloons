@@ -1043,6 +1043,8 @@ MonoBehaviour:
   spawnPosY: 4.5
   startDelay: 2
   startInterval: 1.5
+  delayAndSpawnRate: 2
+  timeUntilSpawnRateIncrease: 30
 --- !u!4 &1717440962
 Transform:
   m_ObjectHideFlags: 0
