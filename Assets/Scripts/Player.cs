@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     {
         Vector3 diff = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        _transform_gun.rotation = Quaternion.Euler(0f, 0f, rotZ + 90);
+        _transform_gun.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
         if (Input.GetKey(KeyCode.A))
         {
