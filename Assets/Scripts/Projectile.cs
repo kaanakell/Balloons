@@ -79,9 +79,10 @@ public class Projectile : MonoBehaviour
             collision.GetComponent<Green>().TakeDamage(damage);
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Small"))
+        else if (collision.CompareTag("Small"))
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<SmallScore>().TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 

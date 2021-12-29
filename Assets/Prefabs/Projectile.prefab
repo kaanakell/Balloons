@@ -170,6 +170,6 @@ MonoBehaviour:
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 8
-  damage: 2
+  damage: 1
   speed: 10
   towards_mouse: 0

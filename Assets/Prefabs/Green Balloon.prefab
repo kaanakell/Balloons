@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc370e118af8d0438ddcad75dc801ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   smallBalloonsPrefab: {fileID: 7660629605089665183, guid: a0829eeedf9c4ef4eb4caa20f9134e84, type: 3}
   threewayPrefab: {fileID: 1843149101255616610, guid: d65194c84200deb4fb22066f3b89c1ba, type: 3}
+  pointValue: 8

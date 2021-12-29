@@ -11,67 +11,56 @@ public class SpawnManager : MonoBehaviour
     public float startDelay = 2.0f;
     public float startInterval = 1.5f;
 
-    [SerializeField]float delayAndSpawnRate = 2;
-    [SerializeField]float timeUntilSpawnRateIncrease = 30;
+    public float spawnRate = 5;
+    public float countdown = 0;
+
+    public float spawn_time = 5;
+    public float timer = 0;
+    public float rate = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("BalloonSpawnChance", startDelay, Random.Range(3f, 5f));
-        //StartCoroutine(SpawnObject(delayAndSpawnRate));
+        //InvokeRepeating("SpawnRate", startDelay, Random.Range(3f, 5f));
     }
 
     // Update is called once per frame
     void Update()
     {
-   
+        Spawn();
     }
 
-    /*IEnumerator SpawnObject(float firstDelay)
+    public void Spawn()
     {
-        float spawnRateCountdown = timeUntilSpawnRateIncrease;
-        float spawnCountdown = firstDelay;
-        while (true)
+        timer += Time.deltaTime * rate;
+        if (timer >= spawn_time)
         {
-            yield return null;
-            spawnRateCountdown -= Time.deltaTime;
-            spawnCountdown -= Time.deltaTime;
-
-            // Should a new object be spawned?
-            if (spawnCountdown < 0)
-            {
-                spawnCountdown += delayAndSpawnRate;
-                Instantiate(balloonPrefabs[0], new Vector2(Random.Range(-9.5f, 9.5f), 5), Quaternion.identity);
-                Instantiate(balloonPrefabs[1], new Vector2(Random.Range(-9.5f, 9.5f), 5), Quaternion.identity);
-                Instantiate(balloonPrefabs[2], new Vector2(Random.Range(-9.5f, 9.5f), 5), Quaternion.identity);
-            }
-
-            // Should the spawn rate increase?
-            if (spawnRateCountdown < 0 && delayAndSpawnRate > 1)
-            {
-                spawnRateCountdown += timeUntilSpawnRateIncrease;
-                delayAndSpawnRate -= 0.1f;
-            }
+            BalloonSpawnChance();
+            timer = 0;
+            rate += 0.1f;
         }
-    }*/
-
-
-    /*void SpawnRandomBalloon()
-    {
-        int balloonIndex = Random.Range(0, balloonPrefabs.Length);
-        Vector3 spawnPos = new Vector3(Random.Range(spawnPosX, -spawnPosX), spawnPosY, spawnPosZ);
-
-        Instantiate(balloonPrefabs[balloonIndex], spawnPos, balloonPrefabs[balloonIndex].transform.rotation);
-    }*/
+    }
+   
 
     public void BalloonSpawnChance()
     {
+        /*timer += Time.deltaTime;
+
+        if(timer > 5)
+        {
+            timer = 0f;
+            delay -= delay;
+            Debug.Log("Time");
+            return;
+        }*/
+
         if (Random.value > 0.5) //%50 percent chance
         {//code here
             int balloonIndex = Random.Range(0, balloonPrefabs.Length);
             Vector3 spawnPos = new Vector3(Random.Range(spawnPosX, -spawnPosX), spawnPosY, spawnPosZ);
 
             Instantiate(balloonPrefabs[0], spawnPos, balloonPrefabs[balloonIndex].transform.rotation);
+            
             return;
         }
 
@@ -81,6 +70,7 @@ public class SpawnManager : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(spawnPosX, -spawnPosX), spawnPosY, spawnPosZ);
 
             Instantiate(balloonPrefabs[1], spawnPos, balloonPrefabs[balloonIndex].transform.rotation);
+            
             return;
         }
 
@@ -90,6 +80,7 @@ public class SpawnManager : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(spawnPosX, -spawnPosX), spawnPosY, spawnPosZ);
 
             Instantiate(balloonPrefabs[2], spawnPos, balloonPrefabs[balloonIndex].transform.rotation);
+            
             return;
         }
     }

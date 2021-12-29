@@ -147,3 +147,4 @@ MonoBehaviour:
   health: 2
   smallBalloonsPrefab: {fileID: 316424578987367855, guid: e289d09b6aca29e43a000b7998726fc8, type: 3}
   splitfirePrefab: {fileID: 5417536648430528808, guid: 32887e4edaa134a44bbc6fc4201d241b, type: 3}
+  pointValue: 6

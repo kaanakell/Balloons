@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5273370795259958500}
   - component: {fileID: -1396021531202003756}
   - component: {fileID: -2906468791822675765}
+  - component: {fileID: -6541643748329991614}
   m_Layer: 3
   m_Name: smol red
   m_TagString: Small
@@ -138,3 +139,17 @@ CircleCollider2D:
   m_Offset: {x: -0.05400568, y: 0}
   serializedVersion: 2
   m_Radius: 1.9730417
+--- !u!114 &-6541643748329991614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178589191987817452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29d5abb3694f804bada05631a617e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  pointValue: 2

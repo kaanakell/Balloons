@@ -27,7 +27,6 @@ public class Balloons : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if (health <= 0)
-        Debug.Log("LOL");
+        if (health <= 0);
     }
 }
