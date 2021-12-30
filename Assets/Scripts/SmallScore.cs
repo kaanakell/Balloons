@@ -25,4 +25,13 @@ public class SmallScore :   Balloons
 
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            FindObjectOfType<GameManager>().GameOver();
+        }
+
+    }
 }

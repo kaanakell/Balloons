@@ -31,4 +31,13 @@ public class Yellow : Balloons
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            FindObjectOfType<GameManager>().GameOver();
+        }
+
+    }
 }

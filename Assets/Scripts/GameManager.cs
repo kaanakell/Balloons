@@ -5,9 +5,15 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public GameOverScript GameOverScreen;
 
     public TextMeshProUGUI scoreText;
     private int score;
+
+    public void GameOver()
+    {
+        GameOverScreen.Setup(score);
+    }
 
     // Start is called before the first frame update
     void Start()
