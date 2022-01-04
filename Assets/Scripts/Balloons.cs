@@ -6,7 +6,7 @@ public class Balloons : MonoBehaviour
 {
     private Rigidbody2D rbEnemy;
     public float health;
-    //public GameObject deathEffect;
+    public GameObject deathEffect;
     public float hp { get; set; }
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Balloons : MonoBehaviour
     {
         if(health <= 0)
         {
-            //Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
