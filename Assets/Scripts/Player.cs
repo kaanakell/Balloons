@@ -72,10 +72,10 @@ public class Player : MonoBehaviour
         switch (power)
         {
             case "splitfire":
-                rate_of_fire = 0.5f;
+                rate_of_fire = 1f;
                 break;
             case "threeway":
-                rate_of_fire = 1f;
+                rate_of_fire = 0.5f;
                 break;
         }
 
