@@ -145,5 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  deathEffect: {fileID: 2145110346659757291, guid: 64757e0702bf9b44a8c5e846dad943e1, type: 3}
   smallBalloonsPrefab: {fileID: 6178589191987817452, guid: 1af33206631ade54694951a165408f61, type: 3}
   pointValue: 4

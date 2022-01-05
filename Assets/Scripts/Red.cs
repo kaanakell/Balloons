@@ -24,6 +24,9 @@ public class Red : Balloons
              lol.GetComponent<Rigidbody2D>().AddForce(transform.right * Random.Range(0.5f, 1f), ForceMode2D.Impulse);
              lol = Instantiate(smallBalloonsPrefab, transform.position + new Vector3(-0.2f, 0, 0), transform.rotation);
              lol.GetComponent<Rigidbody2D>().AddForce(-transform.right * Random.Range(0.5f, 1f), ForceMode2D.Impulse);
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().Play("Red");
             gameManager.UpdateScore(pointValue);
 
             Destroy(gameObject);

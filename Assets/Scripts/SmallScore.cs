@@ -20,7 +20,8 @@ public class SmallScore :   Balloons
         {
 
             gameManager.UpdateScore(pointValue/2);
-
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("Death");
             Destroy(gameObject);
 
         }

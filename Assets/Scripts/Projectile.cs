@@ -39,27 +39,6 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    hit = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
-    //    //if (hitInfo.collider.CompareTag("Balloon"))
-    //    //{
-    //    //    Debug.Log("Balloon Poped");
-    //    //    hitInfo.collider.GetComponent<Balloons>().TakeDamage(damage);
-    //    //}
-    //    if (hit)
-    //    {
-    //        RaycastHit2D lol = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
-    //        if (lol.collider.CompareTag("Balloon"))
-    //        {
-    //            lol.collider.GetComponent<Balloons>().TakeDamage(damage);
-                
-    //            Debug.Log("Balloon Poped");
-    //        }
-    //    }
-
-    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
