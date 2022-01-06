@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_bullet: {fileID: 7462277693641177573, guid: eb8339e774ef4b94ca9957508435922c, type: 3}
+  muzzleFlash: {fileID: 9202325061069782106, guid: ac30e284bfee7954e84a520aaf34c433, type: 3}
   hasPowerup: 0
   speed: 5
   rate_of_fire: 0.1
@@ -449,22 +450,27 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Red
     clip: {fileID: 8300000, guid: 5857b0909a209a34e8b0bd9c2ea9aa9b, type: 3}
-    volume: 0.3
+    volume: 0.1
     pitch: 1
     source: {fileID: 0}
   - name: Green
     clip: {fileID: 8300000, guid: 6400e2fa58638be41ac6eabc665d34d4, type: 3}
-    volume: 0.4
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: Yellow
     clip: {fileID: 8300000, guid: 413e9661ed9325141b93e49ca978c84a, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     source: {fileID: 0}
   - name: Powerup
-    clip: {fileID: 8300000, guid: d0a89f2f368bbb040978c9990a950ca4, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: 7ca8436628b00b14b98da139ee8a5c18, type: 3}
+    volume: 0.07
+    pitch: 1
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 23179549ee4cb93479435842631ef826, type: 3}
+    volume: 0.07
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &359784153
@@ -1693,6 +1699,7 @@ MonoBehaviour:
   offset: -90
   projectilePrefab: {fileID: 7462277693641177573, guid: eb8339e774ef4b94ca9957508435922c, type: 3}
   shotPoint: {fileID: 167986525}
+  muzzleFlash: {fileID: 9202325061069782106, guid: ac30e284bfee7954e84a520aaf34c433, type: 3}
   startTimeBetweenShots: 0.25
 --- !u!1 &1263758493
 GameObject:

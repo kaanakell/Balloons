@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform shotPoint;
 
+    public GameObject muzzleFlash;
+
     private float timeBetweenShots;
     public float startTimeBetweenShots;
 
@@ -25,6 +27,7 @@ public class Gun : MonoBehaviour
                 //float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
                 //transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
                 Instantiate(projectilePrefab, shotPoint.position, transform.rotation);
+                Instantiate(muzzleFlash, transform.position, muzzleFlash.transform.rotation);
             }
         }
         else

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     private Transform _transform_gun;
 
+    public GameObject muzzleFlash;
+
 
 
     public bool hasPowerup = false;
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
         {
             Check_Power();
             StartCoroutine(Cooldown_Attack());
+            Instantiate(muzzleFlash, transform.position, muzzleFlash.transform.rotation);
         }
 
         MovementBoundries();
@@ -72,10 +75,10 @@ public class Player : MonoBehaviour
         switch (power)
         {
             case "splitfire":
-                rate_of_fire = 1f;
+                rate_of_fire = 0.5f;
                 break;
             case "threeway":
-                rate_of_fire = 0.5f;
+                rate_of_fire = 0.3f;
                 break;
         }
 
