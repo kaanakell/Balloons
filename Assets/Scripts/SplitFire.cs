@@ -22,6 +22,8 @@ public class SplitFire : MonoBehaviour
         //Apply effect to player
         player.GetComponent<Player>().Change_Power("splitfire", 3f);
 
+        FindObjectOfType<AudioManager>().Play("Powerup");
+
 
         //Destroy power up object
         Destroy(gameObject);

@@ -443,43 +443,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Death
-    clip: {fileID: 8300000, guid: f8e31ec6798bd9a43814d278e19e4e31, type: 3}
-    volume: 0.5
-    pitch: 0.1
+    clip: {fileID: 8300000, guid: 2152d52e9d8295b45af2befb7e419c74, type: 3}
+    volume: 0.05
+    pitch: 1
     source: {fileID: 0}
   - name: Red
-    clip: {fileID: 8300000, guid: 1fd5e99bb08addd479e481656e45c31d, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 5857b0909a209a34e8b0bd9c2ea9aa9b, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
   - name: Green
-    clip: {fileID: 8300000, guid: 3d9f86dc4011e6441bc15ad4d4656107, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 6400e2fa58638be41ac6eabc665d34d4, type: 3}
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: Yellow
-    clip: {fileID: 8300000, guid: 4f755266757b50847ae583b1d648a368, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 413e9661ed9325141b93e49ca978c84a, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
-  - name: sRed
-    clip: {fileID: 8300000, guid: 5857b0909a209a34e8b0bd9c2ea9aa9b, type: 3}
-    volume: 0.5
-    pitch: 0.1
-    source: {fileID: 0}
-  - name: sGreen
-    clip: {fileID: 8300000, guid: c85367087579a14448847de1f3f1cbc7, type: 3}
-    volume: 0.5
-    pitch: 0.1
-    source: {fileID: 0}
-  - name: sYellow
-    clip: {fileID: 8300000, guid: 413e9661ed9325141b93e49ca978c84a, type: 3}
-    volume: 0.5
-    pitch: 0.1
-    source: {fileID: 0}
   - name: Powerup
-    clip: {fileID: 8300000, guid: 60af1078abf717a43a1bc4dd830a7b69, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: d0a89f2f368bbb040978c9990a950ca4, type: 3}
+    volume: 0.2
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &359784153

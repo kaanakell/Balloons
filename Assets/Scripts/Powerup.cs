@@ -11,7 +11,6 @@ public class Powerup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PickUp(other);
-            FindObjectOfType<AudioManager>().Play("Powerup");
         }
     }
 
@@ -22,6 +21,8 @@ public class Powerup : MonoBehaviour
 
         //Apply effect to player
         player.GetComponent<Player>().Change_Power("threeway", 3f);
+
+        FindObjectOfType<AudioManager>().Play("Powerup");
 
 
         //Destroy power up object
